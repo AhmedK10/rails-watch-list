@@ -23,9 +23,9 @@ class ListsController < ApplicationController
     end
   end
 
-  def movieshow
-    @movies = Movie.all
-  end
+  # def movieshow
+  #   @movies = Movie.all
+  # end
 
   private
 
