@@ -1,0 +1,18 @@
+<h1><%=@list.name%></h1>
+<br>
+<%@list.movies.each do |movie|%>
+  <h2><strong><%= movie.title %></strong></h2>
+  <h3><strong>Overview: </strong><%= movie.overview %></h3>
+  <h3><strong>Poster_url: </strong><%= movie.poster_url %></h3>
+  <h3><strong>Rating: </strong><%= movie.rating %></h3>
+  <%= link_to "Delete", bookmark_path(movie),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+  <br>
+<%end%>
+
+<br>
+<%= link_to "Back to Lists", lists_path%>
+<br>
+<%= link_to "Select a Movie to Add", new_list_bookmark_path(@list)%>
+<%# <%= link_to "Delete Whole List", new_list_bookmark_path%>
