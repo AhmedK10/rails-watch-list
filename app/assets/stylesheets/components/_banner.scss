@@ -1,0 +1,19 @@
+.banner-img {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url("https://c4.wallpaperflare.com/wallpaper/971/593/287/disneyland-walt-disney-disney-wallpaper-preview.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  // div {
+  //   //text-align: center;
+  //   padding-top: 30%;
+  // }
+
+  h1 {
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+  }
+}

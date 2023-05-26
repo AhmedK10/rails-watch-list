@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   #get "lists/movieshow", to: "lists#movieshow", as: "lists_movieshow"
+  root to: "lists#index"
   resources :lists, only: [:index, :show, :new, :create] do
     resources :bookmarks, only: [:new, :create]
   end
