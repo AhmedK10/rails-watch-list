@@ -9,7 +9,7 @@ require 'json'
 require 'open-uri'
 
 puts "deleting all old data....."
-Movie.delete_all
+Movie.destroy_all
 
 
 puts "Creating data....."
@@ -33,6 +33,5 @@ movies_array.each_with_index do |movie_data, index|
   poster_rest = movie_data['poster_path']
   poster_url = "#{poster_base}#{poster_rest}"
 
-  movie = Movie.new(title: title, overview: overview, rating: rating, poster_url: poster_url)
-  movie.save
+  Movie.create(title: title, overview: overview, rating: rating, poster_url: poster_url)
 end
