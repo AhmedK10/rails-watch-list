@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
 
-  before_action :set_list, only: [:show]
+  before_action :set_list, only: [:show, :destroy]
 
   def index
     @lists = List.all
@@ -26,6 +26,11 @@ class ListsController < ApplicationController
   # def movieshow
   #   @movies = Movie.all
   # end
+
+  def destroy
+    @list.destroy
+    redirect_to root_path, status: :see_other
+  end
 
   private
 

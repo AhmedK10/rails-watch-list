@@ -1,7 +1,17 @@
-<h1>Add a movie & comment</h1>
 
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :movie_id, collection: @movies %>
-  <%= f.input :comment %>
-  <%= f.submit %>
-<% end %>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Add a Movie & Comment to your <%= @list.name %> List</h3>
+        <br>
+        <%= simple_form_for [@list, @bookmark] do |f| %>
+          <%= f.input :movie_id, collection: @movies, include_blank: 'Select a Movie', input_html: {data: { controller: "tom-select"}}  %>
+          <%= f.input :comment, placeholder: 'Enter a comment about this movie', input_html: { class: 'textarea'}  %>
+          <%= f.button :submit, 'Add Movie', class:"button"%>
+           <%= button_tag 'Cancel', type: 'button', class: 'button-back text-decoration-none', onclick: "window.location.href='#{list_path(@list)}'" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

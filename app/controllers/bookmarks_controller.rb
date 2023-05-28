@@ -26,7 +26,7 @@ class BookmarksController < ApplicationController
   end
 
 
-  # private
+   private
 
   # def set_bookmark
   #   @bookmark = Bookmark.find(params[:id])

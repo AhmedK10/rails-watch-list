@@ -1,4 +1,39 @@
 .button {
+  color: white;
+  padding: 8px 40px;
+  border-radius: 5px;
+  border: $primary solid 1px;
+  background: $primary;
+  //transition: background 0.3s ease;
 
+  &:hover {
+    border-width: 0.1px;
+    border: solid lightgrey 1px;
+    transition: background 0.3s ease;
+    background-color: transparent;
+    color: black;
+  }
+}
+
+
+.button-back {
+
+  color: white;
+  padding-top: 9px;
+  padding-bottom: 11px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 5px;
+  border: $primary solid 1px;
+  background: $primary;
+  //transition: background 0.3s ease;
+
+  &:hover {
+    border-width: 0.1px;
+    border: solid lightgrey 1px;
+    transition: background 0.3s ease;
+    background-color: transparent;
+    color: black;
+  }
 
 }
