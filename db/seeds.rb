@@ -23,7 +23,7 @@ response = URI.open(url).read
 data = JSON.parse(response)
 movies_array = data["results"]
 
-puts "Iterating....."
+puts "Iterating......"
 movies_array.each_with_index do |movie_data, index|
 
   title = movie_data['title']
