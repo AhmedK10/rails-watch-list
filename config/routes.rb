@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   #get "lists/movieshow", to: "lists#movieshow", as: "lists_movieshow"
   root to: "lists#index"
   delete "lists/:id", to: "lists#destroy", as: :list_delete
-  resources :lists, only: [:new, :create, :show] do
+  resources :lists, only: [:index, :new, :create, :show] do
     resources :bookmarks, only: [:new, :create]
   end
 

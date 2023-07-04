@@ -16,7 +16,7 @@
     <% @lists.each_with_index do |list, i| %>
       <div class="card">
         <%= link_to list_path(list), class:"text-decoration-none" do %>
-          <div class="card-img" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= asset_path('micky-background.jpg') %>)">
+          <div class="card-img" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= asset_path('imgcard.jpg') %>)">
             <%= list.name %>
           </div>
         <% end %>

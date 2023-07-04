@@ -1,37 +1,28 @@
-<h1><%=@list.name%></h1>
-<br>
-<%@list.movies.each do |movie|%>
-  <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-  <h2><strong><%= movie.title %></strong></h2>
-  <h3><strong>Overview: </strong><%= movie.overview %></h3>
-  <h3><strong>Poster_url: </strong><%= movie.poster_url %></h3>
-  <h3><strong>Rating: </strong><%= movie.rating %></h3>
-  <%= link_to "Delete", bookmark_path(bookmark),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
+<div class="container mt-4 pb-5">
+  <h1><%=@list.name%></h1>
   <br>
-<%end%>
-
-<br>
-<br>
-<%= link_to "Add a Movie", new_list_bookmark_path(@list), class: "button text-decoration-none"%>
-<%= link_to "Back to Lists", root_path, class: "button text-decoration-none"%>
-
-<%# <% list_to_delete = List.find(params[:id])%>
-<%= link_to "Delete This List", list_delete_path(@list), class: "button text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-
-<%# <script type="text/javascript">
-  function openOverlay(url) {
-    var overlay = document.createElement("div");
-    overlay.id = "overlay";
-    document.body.appendChild(overlay);
-
-    var iframe = document.createElement("iframe");
-    iframe.src = url;
-    overlay.appendChild(iframe);
-
-    var navbar = document.getElementById("navbar");
-    if (navbar) {
-      navbar.style.display = "none";
-    }
-  } %>
+  <%@list.movies.each do |movie|%>
+    <div class="mt-5 d-flex movie-card-show">
+      <div>
+        <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+        <h2><strong><%= movie.title %></strong></h2>
+        <h3 class="mb-4 mt-4"><%= movie.overview %></h3>
+        <%= link_to bookmark_path(bookmark),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete the movie from this list?" } do %>
+          <i class="fas fa-trash"></i> Delete
+        <% end %>
+      </div>
+      <div class="d-flex flex-column ms-5">
+        <h3 class="mb-4 mt-4"><strong>Rating: </strong><%= movie.rating %></h3>
+        <%= image_tag(movie.poster_url, style: "max-width: 600px; max-height: 600px;") %>
+      </div>
+    </div>
+    <br>
+  <%end%>
+  <br>
+  <br>
+  <%= link_to "Add a Movie", new_list_bookmark_path(@list), class: "button text-decoration-none"%>
+  <%= link_to "Back to Lists", root_path, class: "button text-decoration-none"%>
+  <%# <% list_to_delete = List.find(params[:id])%>
+  <%= link_to "Delete This List", list_delete_path(@list), class: "button text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+</div>
