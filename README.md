@@ -14,7 +14,7 @@ This repo is for an mini Ruby on Rails web development project made during time 
 
 Link : <a href="https://ahmed-watch-list.herokuapp.com/" target="_blank">https://ahmed-watch-list.herokuapp.com/</a>
 
-<a href="https://ahmed-watch-list.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/QMyVchG/movielist.jpg" alt="movielist-home" border="0"></a>
+<a href="https://ahmed-watch-list.herokuapp.com/" target="_blank"><img src="https://i.ibb.co/kXNTyzF/movielist.jpg" alt="movielist-home" border="0"></a>
 
 
 ## Description
