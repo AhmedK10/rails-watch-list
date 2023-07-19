@@ -1,6 +1,6 @@
 <h1 align="center">Dynamic Movie-List</h1>
 <br>
-This repo is for an mini Ruby on Rails web development project made during time as a student at Le Wagon's Amsterdam Web Development Bootcamp.
+This repo is for a mini Ruby on Rails web development project made during time as a student at Le Wagon's Amsterdam Web Development Bootcamp.
 
 ## Contents
   - [Website](#website)
